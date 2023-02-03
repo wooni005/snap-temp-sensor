@@ -1,0 +1,40 @@
+name: temp-sensor
+base: core18
+version: '0.1dev'
+summary: Temp sensor simulation via mqtt
+description: |
+  Temp sensor simulation via mqtt
+
+grade: devel
+confinement: devmode
+architectures: 
+  - build-on: arm64
+
+parts:
+  temp-sensor:
+    # See 'snapcraft plugins'
+    source: .
+    plugin: python
+    requirements: ['requirements.txt']
+
+  # writer-snap-data:
+  #   plugin: dump
+  #   source: .
+
+  # launcher:
+  #   plugin: nil
+  #   source: .
+  #   override-build: |
+  #     mkdir -p $SNAPCRAFT_PART_INSTALL/bin
+  #     cp -av writer.sh $SNAPCRAFT_PART_INSTALL/bin/
+
+# slots:
+#   shared-files:
+#     interface: content
+#     content: shared-files
+#     read: 
+#       - $SNAP_DATA
+
+apps:
+  temp-sensor:
+    command: temp-sensor
