@@ -1,4 +1,4 @@
-# snap-temp-sensor
+# Snap Temperature sensor simulation
 
 This is a small Ubuntu Snap to use as a template/demo.
 
